@@ -17,7 +17,7 @@ def handler(event, context):
         event_data = event.get('body')
         data = json.loads(event_data)
         if 'data' in data:
-            # Test Changes for finerworks
+            # Test Changes for finerworks api
             obj = s3.Object(os.environ.get('BUCKET'), f'finerworks/order_{timestamp}.json')
             res = obj.put(Body=json.dumps(data, indent=4))
             return {
